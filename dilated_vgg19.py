@@ -94,9 +94,9 @@ history = model.fit_generator(train_datagen.flow(X_train,y_train, batch_size=bat
 
 
 model.summary()
-for layer in model.layers:
-    layer.trainable = True
-'''
+'''for layer in model.layers:
+    layer.trainable = True'''
+
 for layer in model.layers[:1]:
     layer.trainable =True
 for layer in model.layers[1:3]:
@@ -119,7 +119,7 @@ for layer in model.layers[17:21]:
     layer.trainable = Conv2D(512, (3, 3), dilation_rate=(16,16))
 for layer in model.layers[21:]:
     layer.trainable = True
-'''
+
 optimizer = Adam(lr=0.0001, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.0, amsgrad=False)
 model.compile(loss='categorical_crossentropy',
               optimizer=optimizer,
